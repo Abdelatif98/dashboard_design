@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="151dp"
-        android:background="@drawable/bkg_arabesque_2"
-        android:fitsSystemWindows="true"
+        android:layout_height="221dp"
+        android:background="@drawable/shadow_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:fitsSystemWindows="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/innerConstraint"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="151dp"
+            android:background="@drawable/img_bg">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -29,47 +32,143 @@
                 android:src="@drawable/ic_logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-            </ImageView>
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-            <com.mikhaellopez.circularimageview.CircularImageView
+            <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="39.35dp"
-                android:layout_height="39.35dp"
-                android:layout_marginStart="82dp"
-                android:layout_marginTop="44dp"
+                android:layout_width="39.5dp"
+                android:layout_height="39.5dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="49dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/shadow_circle"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
+                android:paddingRight="2dp"
+                android:paddingBottom="3dp"
+                android:src="@drawable/user"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/ic_logo"
-                app:civ_border="true"
-                app:civ_border_width="3dp"
-                app:civ_border_color="@color/white"
-                app:civ_shadow="true"
-                app:civ_shadow_color="@color/black"
-                app:civ_shadow_radius="1dp"
-                app:civ_shadow_gravity="bottom"/>
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/verdana_bold"
+                    android:text="COMPTE CHÈQUE"
+                    android:textColor="@color/textColor1" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/verdana"
+                    android:text="356   987   413268  9714596514   24"
+                    android:textColor="@color/textColor1"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="10dp"
+                android:layout_height="17dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/ic_btn_next"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="10dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="28dp"
+                android:background="@drawable/ic_btn_back"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/mark"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="29dp"
+                android:background="@drawable/rounded_textview"
+                android:fontFamily="@font/verdana"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/verdana_bold"
+                android:text="32.763,00 Dhs"
+                android:textColor="@color/green_500"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="2dp"
+                    app:srcCompat="@drawable/ic_clock" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/verdana"
+                    android:text="3500,00 Dhs"
+                    android:textColor="@color/red"
+                    android:textSize="10sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -86,34 +185,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom" />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="408dp"
-        android:layout_height="411dp"
-        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
