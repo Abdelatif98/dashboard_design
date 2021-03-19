@@ -33,22 +33,25 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <com.alexzh.circleimageview.CircleImageView
                 android:id="@+id/iv_user"
                 android:layout_width="39.5dp"
                 android:layout_height="39.5dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="49dp"
                 android:layout_marginEnd="32dp"
-                android:background="@drawable/shadow_circle"
-                android:paddingLeft="2dp"
-                android:paddingTop="2dp"
-                android:paddingRight="2dp"
-                android:paddingBottom="3dp"
                 android:src="@drawable/user"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:view_borderColor="@color/white"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:view_borderWidth="2dp"
+                app:view_shadowColor="@color/shadow"
+                app:view_shadowDy="3dp"
+                app:view_shadowDx="0dp"
+                app:view_shadowRadius="1dp"
+                app:view_selectedColor="@color/white"
+                app:view_pressedRingColor="@color/white"/>
 
 
             <LinearLayout
@@ -109,8 +112,8 @@
                 android:id="@+id/tv_notif"
                 android:layout_width="17dp"
                 android:layout_height="17dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="29dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginBottom="26dp"
                 android:background="@drawable/rounded_textview"
                 android:fontFamily="@font/verdana"
                 android:gravity="center"
@@ -118,8 +121,8 @@
                 android:text="5"
                 android:textColor="@android:color/white"
                 android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+                app:layout_constraintStart_toStartOf="@+id/iv_user" />
 
             <Button
                 android:id="@+id/btn_menu"

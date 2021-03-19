@@ -7,14 +7,14 @@
                 <shape android:shape="oval">
                     <gradient
                         android:startColor="@color/shadow"
-                        android:endColor="@color/shadow"
+                        android:endColor="@color/white"
 
                         android:gradientRadius="40dp"
                         android:type="radial"
                         />
                 </shape>
             </item>
-            <item android:top="0dp" android:left="0dp" android:right="0dp" android:bottom="2dp">
+            <item android:top="0dp" android:left="0dp" android:right="0dp" android:bottom="0dp">
                 <shape android:shape="oval">
                     <size android:width="39.5dp"
                         android:height="39.5dp"/>
