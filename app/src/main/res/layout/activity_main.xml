@@ -101,8 +101,8 @@
 
             <Button
                 android:id="@+id/btn_back"
-                android:layout_width="10dp"
-                android:layout_height="17dp"
+                android:layout_width="6dp"
+                android:layout_height="21dp"
                 android:layout_marginStart="28dp"
                 android:background="@drawable/ic_btn_back"
                 app:backgroundTint="@null"
@@ -189,22 +189,56 @@
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <FrameLayout
+        android:id="@+id/fatherlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="195dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appBarLayout">
+
+        <fragment
+            android:id="@+id/fatherfragment"
+            android:name="com.example.dashboarddesign.operationsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="428dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
+            app:layout_constraintEnd_toStartOf="@+id/bottom_navigation"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:layout_constraintVertical_bias="0.551" />
+    </FrameLayout>
+
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout2"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom" />
+            android:layout_height="wrap_content"
+            app:itemBackground="@color/green_200"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_navigation_menu" />
+
+
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

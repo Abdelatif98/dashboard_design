@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">dashboard design</string>
+    <string name="app_name">BankApp</string>
     <string name="logo_img">logo_img</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="greetingFragOp">VOS DERNIÈRES OPÈRATIONS</string>
+    <string name="greetingFragBil">Vos Factures</string>
+    <string name="greetingFragChe">Service Chèquier</string>
+    <string name="greetingFragRib">Information sur RIB</string>
+
 </resources>
