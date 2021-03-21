@@ -24,4 +24,15 @@
         <item name="android:textSize">8sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
+
+    <style name="TextAppearance">
+        <item name="android:lines">2</item>
+        <item name="android:gravity">center</item>
+        <item name="lineSpacing">10sp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="itemPadding">0dp</item>
+        <item name="fontFamily">@font/verdana_bold</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
 </resources>

@@ -4,54 +4,32 @@
     >
     <item
         android:id="@+id/getbill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
         android:enabled="true"
         android:visible="true"
         android:icon="@drawable/ic_bills"
         android:title="FACTURES"
-
         />
 
     <item
-
         android:enabled="true"
         android:visible="true"
         android:id="@+id/getcheque"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
         android:icon="@drawable/ic_cheques"
         android:title="CHÈQUIER &amp; \nLCN"
-
-
         />
 
     <item
-
         android:id="@+id/getrans"
-        android:layout_width="wrap_content"
         android:enabled="true"
         android:visible="true"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
         android:icon="@drawable/ic_vir"
         android:title="VIREMENTS"
         />
 
     <item
-
         android:enabled="true"
         android:visible="true"
         android:id="@+id/getrib"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
         android:icon="@drawable/ic_rib"
         android:title="RIB"
         />
