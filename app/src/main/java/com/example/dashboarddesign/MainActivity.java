@@ -26,7 +26,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements ItemSelectedListener {
-    private static final int PICK_IMAGES = 1;
+    private static final int PICK_IMAGE = 1;
     // declarations
     Button btn_back, btn_next, btn_menu;
     TextView tv_numCompte, tv_solde1, tv_solde2, tv_notif;
@@ -56,12 +56,15 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedListe
         tv_solde1 = findViewById(R.id.tv_solde1);
         tv_solde2 = findViewById(R.id.tv_solde2);
         tv_notif = findViewById(R.id.tv_notif);
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
         iv_user = findViewById(R.id.iv_user);
+
         // switching fragments
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    //events
+
+        //events
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedListe
             }
         });
 
+        // user image view selection
         if (iv_user != null) {
             iv_user.setOnItemSelectedClickListener(this);
         }
@@ -120,10 +124,11 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedListe
 
     @Override
     public void onSelected(View view) {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        Intent intent = new Intent();
         intent.setType("image/*");
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-        startActivityForResult(intent, PICK_IMAGES);
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,
+                "Select Picture"), PICK_IMAGE);
     }
 
     @Override
@@ -135,20 +140,13 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedListe
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            if (requestCode == PICK_IMAGES) {
-                if (data.getClipData() != null) {
-                    ClipData mClipData = data.getClipData();
-                    for (int i = 0; i < mClipData.getItemCount(); i++) {
-                        ClipData.Item item = mClipData.getItemAt(i);
-                        Uri uri = item.getUri();
-                        // display your images
-                        iv_user.setImageURI(uri);
-                    }
-                } else if (data.getData() != null) {
-                    Uri uri = data.getData();
-                    // display your image
-                    iv_user.setImageURI(uri);
+            if (requestCode == PICK_IMAGE) {
+                Uri uri = null;
+                if (data != null) {
+                    uri = data.getData();
                 }
+                // display your image
+                    iv_user.setImageURI(uri);
             }
         }
     }

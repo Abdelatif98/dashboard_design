@@ -111,8 +111,8 @@
 
             <TextView
                 android:id="@+id/tv_notif"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
                 android:layout_marginStart="26dp"
                 android:layout_marginBottom="26dp"
                 android:background="@drawable/rounded_textview"
@@ -193,17 +193,18 @@
         android:id="@+id/fatherlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="195dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appBarLayout">
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
         <fragment
             android:id="@+id/fatherfragment"
             android:name="com.example.dashboarddesign.operationsFragment"
             android:layout_width="match_parent"
-            android:layout_height="428dp"
+            android:layout_height="328dp"
             android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
             app:layout_constraintEnd_toStartOf="@+id/bottom_navigation"
@@ -228,10 +229,11 @@
             android:layout_height="wrap_content"
             app:itemBackground="@color/green_200"
             app:itemIconTint="@color/white"
+            app:itemTextAppearanceActive="@style/menu_text"
+            app:itemTextAppearanceInactive="@style/menu_text"
             app:itemTextColor="@color/white"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_navigation_menu" />
-
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
