@@ -101,8 +101,8 @@
 
             <Button
                 android:id="@+id/btn_back"
-                android:layout_width="6dp"
-                android:layout_height="21dp"
+                android:layout_width="10dp"
+                android:layout_height="17dp"
                 android:layout_marginStart="28dp"
                 android:background="@drawable/ic_btn_back"
                 app:backgroundTint="@null"
