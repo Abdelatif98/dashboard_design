@@ -76,13 +76,15 @@ public class operationsFragment extends Fragment {
         oplist.add(new operationsModel("Mise à disposition","+15.1243,00","17 Mars"));
         oplist.add(new operationsModel("Mise à disposition","+51.243,00","16 Mars"));
         oplist.add(new operationsModel("Virement","-51.243,00","13 Mars"));
-        oplist.add(new operationsModel("Virement","-51.243,00","10 Mars"));
+        oplist.add(new operationsModel("Mise à disposition","+50.200,00","10 Mars"));
+        oplist.add(new operationsModel("Mise à disposition","+50.200,00","10 Mars"));
+        oplist.add(new operationsModel("Mise à disposition","+50.200,00","10 Mars"));
+        oplist.add(new operationsModel("Mise à disposition","+50.200,00","10 Mars"));
         // 1. get a reference to recyclerView
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.oprecview);
 
         // 2. set layoutManger
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
 
         // 3. create an adapter
         recyclerAdapter mAdapter = new recyclerAdapter(this.getContext(),oplist);
