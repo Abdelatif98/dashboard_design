@@ -1,5 +1,6 @@
 package com.example.dashboarddesign;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,9 +26,13 @@ import android.widget.Toast;
 import com.alexzh.circleimageview.ItemSelectedListener;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements ItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements ItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
     private static final int PICK_IMAGE = 1;
+    //Drawer
+    DrawerLayout drawer;
+    NavigationView navigationView;
     // declarations
     Button btn_back, btn_next, btn_menu;
     TextView tv_numCompte, tv_solde1, tv_solde2, tv_notif;
@@ -42,6 +48,18 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // side menu:
+        drawer = findViewById(R.id.side_nav);
+        navigationView = findViewById(R.id.side_menu);
+        // make side menu items clickable
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.side_menu_home);
+        // hide/show elements (login/logout)
+        Menu menu = navigationView.getMenu();
+        // menu.findItem(R.id.side_menu_taches).setVisible(false);
+
 
         // remove appBar elevation
         AppBarLayout layout = (AppBarLayout) findViewById(R.id.appBarLayout);
@@ -83,6 +101,11 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedListe
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"button menu clicked!",Toast.LENGTH_SHORT).show();
+                if (!drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.openDrawer(GravityCompat.START);
+                } else {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
             }
         });
 
@@ -90,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedListe
         if (iv_user != null) {
             iv_user.setOnItemSelectedClickListener(this);
         }
+
 
     }
 
@@ -149,5 +173,36 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedListe
                     iv_user.setImageURI(uri);
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        }else{
+            MainActivity.super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.side_menu_home:
+                break;
+            case R.id.side_menu_params:
+                Toast.makeText(this, "To Params", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.side_menu_comptes:
+                Toast.makeText(this, "To Comptes", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.side_menu_taches:
+                Toast.makeText(this, "To Taches", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.side_menu_rib:
+                fm.beginTransaction().replace(R.id.fatherfragment, new ribFragment()).commit();
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }

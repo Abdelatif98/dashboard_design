@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/side_menu_home"
+            android:title="Accueil"
+            android:icon="@drawable/home"/>
+        <item
+            android:id="@+id/side_menu_params"
+            android:title="Parametres"
+            android:icon="@drawable/params"/>
+
+    </group>
+
+        <item android:title="Consultation">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/side_menu_comptes"
+                    android:title="Comptes"
+                    android:icon="@drawable/user_menu"/>
+                <item
+                    android:id="@+id/side_menu_taches"
+                    android:title="Taches"
+                    android:icon="@drawable/tasks"/>
+                <item
+                    android:id="@+id/side_menu_rib"
+                    android:title="RIB"
+                    android:icon="@drawable/rib"/>
+            </group>
+        </menu>
+        </item>
+
+</menu>
